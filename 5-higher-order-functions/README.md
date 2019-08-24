@@ -259,6 +259,8 @@ few days and look for opportunities to refactor your use of `for` loops using
     ```
 #### Other scripts
 
+1.  From the class
+
     ```js
     var midAgePeople = people.filter((people) => people.age > 30).filter((people) => people.name.middle != undefined); /* [ { name: { first: 'Eva', middle: 'Lu', last: 'Ator' }, age: 40 },
       { name: { first: 'Lem', middle: 'E.', last: 'Tweakit' },
