@@ -51,6 +51,8 @@ Before getting started, make sure that you have a JavaScript console open (like 
    ```js
    var arr = [2, 3, 4];
    // your code here
+   arr.unshift(0, 1)
+   arr.push(5, 6, 7)
    arr; // => [0, 1, 2, 3, 4, 5, 6, 7]
    ```
 
