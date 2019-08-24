@@ -180,6 +180,28 @@ shortcut for chrome editor `option` + `command` + `j`
    // "h e l l o" (spaces added for clarity)
    //  | | | | |
    //  0 1 2 3 4
+   // first try
+   function stringLength(str) {
+     var sub = str
+     var count = 1
+     while (sub != '') {
+       sub = str.slice(count)
+       count += 1
+     }
+     return count - 1;
+   }
+   stringLength('Bella'); // 5
+   //improved
+   function stringLength(str) {
+     var sub = str
+     var count = 0
+     while (sub != '') {
+       count += 1
+       sub = str.slice(count)
+     }
+     return count;
+   }
+   stringLength(''); // 0
    ```
 
    The `"h"` character has index (position) `0` in the string `"hello"`, `"e"`
