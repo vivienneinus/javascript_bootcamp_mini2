@@ -257,7 +257,7 @@ Fix the syntax & style issues with the three objects below:
      method (experiment at a console with it to learn its behavior):
 
    ```js
-   "HElLo".toLowerCase(); // => ???
+   "HElLo".toLowerCase(); // => 'hello'
    ```
 
 3. Write a function `countCharacters` that, when given a string as an argument,
@@ -265,9 +265,18 @@ Fix the syntax & style issues with the three objects below:
    the string.
 
    ```js
-   function countCharacters(s) {
-     // ...
-   }
+    function countCharacters(s) {
+      s = s.toLowerCase().split('')
+      let d = {}
+      for (let e of s) {
+        if (e in d) {
+          d[e] += 1
+        } else {
+          d[e] = 1
+        }
+      }
+      return d;
+    }
    countCharacters("hello"); // => {"h": 1, "e": 1, "l": 2, "o": 1}
    ```
 
@@ -279,9 +288,15 @@ Fix the syntax & style issues with the three objects below:
    the object:
 
    ```js
-   function select(obj, keys) {
-     // ...
-   }
+    function select(obj, keys) {
+      let d = {}
+      for (let key of keys) {
+        if (key in obj) {
+          d[key] = obj[key]
+        }
+      }
+      return d;
+    }
    select({a: 1, b: 2, c: 3}, ["a"]); // => {a: 1}
    select({a: 1, b: 2, c: 3}, ["a", "c"]); // => {a: 1, c: 3}
    select({a: 1, b: 2, c: 3}, ["a", "c", "d"]); // => {a: 1, c: 3}
@@ -292,7 +307,11 @@ Fix the syntax & style issues with the three objects below:
 
    ```js
    function extend(obj1, obj2) {
-     // ...
+      let keys = Object.keys(obj2)
+      for (let key of keys) {
+        obj1[key] = obj2[key]
+      }
+      return obj1;
    }
    extend({a: 1}, {b: 2}); // => {a: 1, b: 2}
    extend({a: 1, c: 3}, {b: 2, c: 4}); // => {a: 1, b: 2, c: 4}
@@ -304,7 +323,7 @@ Fix the syntax & style issues with the three objects below:
    with it at the console like this:
 
    ```js
-   Object.keys({a: 1, b: 2});
+   Object.keys({a: 1, b: 2}); // ['a', 'b']
    ```
 
    Using this property, write versions of the above functions using repetition
