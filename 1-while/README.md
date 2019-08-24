@@ -138,6 +138,28 @@ shortcut for chrome editor `option` + `command` + `j`
      return fib(n-1) + fib(n-2);
    }
    fib(5);
+   // improved
+   function fib(n) {
+     var p = 1
+     var pp = 1
+     var f = 0
+     // var i = 2
+     if (n === 0) {
+       return 1;
+     } else if (n === 1) {
+       return 1;
+     } 
+     // while (i <= 5 && i >= 2) {
+     while (n >= 2) {
+       f = p + pp
+       // i += 1
+       n -= 1
+       pp = p
+       p = f
+     }
+     return f;
+   }
+   fib(5);
    ```
 
    That is, `fib(0)` is 1, `fib(1)` is 1, `fib(2)` is 2, `fib(3)` is 3, `fib(4)`
