@@ -1,6 +1,7 @@
 # Part I: While
 
 Before getting started, make sure that you have a JavaScript console open (like <a href="http://www.repl.it/languages/javascript" target="_blank">repl.it</a>), so you can complete these exercises.
+shortcut for chrome editor `option` + `command` + `j`
 
 ## Exercises
 
@@ -13,6 +14,13 @@ Before getting started, make sure that you have a JavaScript console open (like 
    ```js
    function sum(n) {
      // TODO: your code here
+     var s = 0
+     var i = 0
+     while(i <= n) {
+       s = s + i
+       i = i + 1
+     }
+     return s;
    }
    sum(3); // => 6
    sum(4); // => 10
@@ -25,6 +33,13 @@ Before getting started, make sure that you have a JavaScript console open (like 
    ```js
    function factorial(n) {
      // TODO: your code here
+     var r = 1
+     var i = 1
+     while (i <= n) {
+       r = r * i
+       i += 1
+     }
+     return r;
    }
    factorial(3); // => 6
    factorial(4); // => 24
@@ -39,6 +54,12 @@ Before getting started, make sure that you have a JavaScript console open (like 
    ```js
    function repeatString(str, count) {
      // TODO: your code here
+     var r = ''
+     while (count > 0) {
+       r = r.concat(str)
+       count -= 1
+     }
+     return r;
    }
    repeatString('dog', 0); // => ''
    repeatString('dog', 1); // => 'dog'
@@ -57,6 +78,12 @@ Before getting started, make sure that you have a JavaScript console open (like 
    ```js
    function sum(start, end) {
      // TODO: your code here
+     var s = 0
+     while (start <= end) {
+       s += start
+       start += 1
+     }
+     return s;
    }
    sum(2, 7); // => 2 + 3 + 4 + 5 + 6 + 7 => 27
    sum(3, 5); // => 3 + 4 + 5 => 12
@@ -101,6 +128,16 @@ Before getting started, make sure that you have a JavaScript console open (like 
    // fib(n): 1 1 2 3 5 8 13 21
    //         | | | | | |  |  |
    //      n: 0 1 2 3 4 5  6  7
+   // recursion inefficient
+   function fib(n) {
+     if (n === 1) {
+       return 1;
+     } else if (n === 0) {
+       return 1;
+     }
+     return fib(n-1) + fib(n-2);
+   }
+   fib(5);
    ```
 
    That is, `fib(0)` is 1, `fib(1)` is 1, `fib(2)` is 2, `fib(3)` is 3, `fib(4)`
@@ -127,8 +164,8 @@ Before getting started, make sure that you have a JavaScript console open (like 
    get an idea of how `slice` works, try the following at a console:
 
    ```js
-   "hello".slice(0);
-   "hello".slice(1);
+   "hello".slice(0); //hello
+   "hello".slice(1); //ello
    "".slice(1);
    ```
 
