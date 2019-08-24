@@ -256,7 +256,10 @@ few days and look for opportunities to refactor your use of `for` loops using
     var words = "the quick brown fox jumps over the lazy dog".split(" ");
     startsWithChar(words, "q"); // => ["quick"]
     startsWithChar(words, "t"); // => ["the", "the"]
-    
+    ```
+#### Other scripts
+
+    ```js
     var midAgePeople = people.filter((people) => people.age > 30).filter((people) => people.name.middle != undefined); /* [ { name: { first: 'Eva', middle: 'Lu', last: 'Ator' }, age: 40 },
       { name: { first: 'Lem', middle: 'E.', last: 'Tweakit' },
         age: 45 } ] */
