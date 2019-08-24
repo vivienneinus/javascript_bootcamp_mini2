@@ -38,6 +38,11 @@ Before getting started, make sure that you have a JavaScript console open (like 
 
 2. Write a function `first` that takes an array as an argument and returns the
    first element in that array.
+   ```js
+   function first(array) {
+     return array[0];
+   }
+   ```
 
 3. Write a function `last` that takes an array as an argument and returns the
    *last* element in the array. **Hint:** What is the relationship between the
@@ -115,11 +120,21 @@ Before getting started, make sure that you have a JavaScript console open (like 
    numbers.slice(0);
    numbers.slice(1);
    numbers.slice(2);
-   numbers.slice(0, 2);
+   numbers.slice(0, 2); // [3, 2]
+   function rest(arr, idx) {
+     return arr.slice(idx);
+   }
+   rest(arr, 5); // [5, 6, 7]
    ```
 
 3. Write a function `butlast` that returns all of the elements in the array
    *except* for the last one (you may want to use `slice` for this one as well).
+   
+   ```js
+   function butLast(arr) {
+     return arr.slice(0, arr.length - 1); // trunc from idx = 0 to idx = length - 2 
+   }
+   ```      
 
 4. Complete the function `cons` that accepts an element and an array, and
    returns an array with the element added to the *front* of the array:
@@ -136,6 +151,7 @@ Before getting started, make sure that you have a JavaScript console open (like 
    ```js
    function conj(array, x) {
      // your code here
+     return array.push(x);
    }
    ```
 
@@ -166,6 +182,7 @@ Before getting started, make sure that you have a JavaScript console open (like 
      return conj(mystery(rest(array)), first(array));
    }
    ```
+   Mystery is the .reverse()
 
 2. Using `first`, `rest`, `conj` and/or `cons`, write functions that accomplish
    the following:
@@ -173,6 +190,51 @@ Before getting started, make sure that you have a JavaScript console open (like 
    + `sum` all the elements of an array
    + Given an array, returns a new array with each element *squared*
    + Given an array of numbers, returns a new array of just the *even* numbers
+   ```js
+   function sum(arr) {
+     if (arr.length === 0) {
+       return 0;
+     }
+     var r = 0
+     var i = 0
+     while (i < arr.length) {
+       r += arr[i]
+       i ++
+     }
+     return r;
+   }
+   sum([1,2,3,5]);
+
+   function square(arr) {
+     if (arr.length === 0) {
+       return [];
+     }
+     var r = []
+     var i = 0
+     while (i < arr.length) {
+       r.push(arr[i]*arr[i])
+       i ++
+     }
+     return r;
+   }
+   square([1,2,3,5]);
+
+   function onlyEvens(arr) {
+     if (arr.length === 0) {
+       return [];
+     }
+     var r = []
+     var i = 0
+     while (i < arr.length) {
+       if (arr[i] % 2 === 0) {
+         r.push(arr[i])
+       }
+       i ++
+     }
+     return r;
+   }
+   onlyEvens([1,2,3,5]);
+   ```
 
    **HINT:** After figuring out how the `mystery` function works above, use it
    as a reference for how to write this type of function.
