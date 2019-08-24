@@ -230,12 +230,21 @@ Fix the syntax & style issues with the three objects below:
    are the number of occurrences of that word within the string:
 
    ```js
-   function countWords(s) {
-   // ...
-   }
-   countWords("hello hello"); // => {"hello": 2}
-   countWords("Hello hello"); // => {"Hello": 1, "hello": 1}
-   countWords("The quick brown"); // => {"The": 1, "quick": 1, "brown": 1}
+    function countWords(s) {
+      var l = s.split(' ')
+      var r = {}
+      for (let key of l) {// for (let x in y) --> return index of x in y
+        if (key in r) {
+          r[key] += 1
+        } else {
+          r[key] = 1
+        }
+      }
+      return r;
+    }
+    countWords("hello hello"); // => {"hello": 2}
+    countWords("Hello hello"); // => {"Hello": 1, "hello": 1}
+    countWords("The quick brown"); // => {"The": 1, "quick": 1, "brown": 1}
    ```
 
    **HINT:** You will want to make use of the string method `split`. Try
