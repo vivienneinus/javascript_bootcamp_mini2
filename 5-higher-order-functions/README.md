@@ -257,7 +257,8 @@ few days and look for opportunities to refactor your use of `for` loops using
     startsWithChar(words, "q"); // => ["quick"]
     startsWithChar(words, "t"); // => ["the", "the"]
     ```
-#### Other scripts 
+#### Other scripts
+
     ```js
     var midAgePeople = people.filter((people) => people.age > 30).filter((people) => people.name.middle != undefined)
     midAgePeople; /* [ { name: { first: 'Eva', middle: 'Lu', last: 'Ator' }, age: 40 },
