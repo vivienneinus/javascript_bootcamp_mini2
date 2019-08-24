@@ -257,3 +257,17 @@ few days and look for opportunities to refactor your use of `for` loops using
     startsWithChar(words, "q"); // => ["quick"]
     startsWithChar(words, "t"); // => ["the", "the"]
     ```
+#### Other scripts 
+    ```js
+    var midAgePeople = people.filter((people) => people.age > 30).filter((people) => people.name.middle != undefined)
+    midAgePeople; /* [ { name: { first: 'Eva', middle: 'Lu', last: 'Ator' }, age: 40 },
+      { name: { first: 'Lem', middle: 'E.', last: 'Tweakit' },
+        age: 45 } ] */
+    var ageRange = people.map(people => people.age * 2)
+    ageRange; // [ 52, 68, 80, 90, 42 ]
+    ["HelLo", "WorLD"].map(a => a.toLowerCase());
+    ["the", "quick", "brown", "fox", "jumped"].map(a => a.length);
+    var reduce = [1, 2, 3].reduce((a, b) => a + b, ''); // '123'
+    var reduce = [1, 2, 3].reduce((a, b) => a + b, 1); // 7
+    var map = [1, 2, 3].map((a, b) => a = b); // [0, 1, 2]
+    ```
