@@ -67,6 +67,32 @@ loop.
    [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/join)
    and use it to implement a function that accepts a string as an argument and
    returns that string *reversed*.
+   ```js
+   function reverse(str) {
+    if (str.length === 0) {
+      return '';
+    }
+    var s = []
+    for (i = 0; i < str.length; i++) {
+      s.unshift(str.charAt(i))
+    }
+    return s.join();
+    }
+    reverse('Hello World!');
+
+    function reverse(str) {
+      if (str.length === 0) {
+        return '';
+      }
+      var s = []
+      for (i = str.length - 1; i >= 0; i--) {
+        s.push(str.charAt(i))
+      }
+      return s.join();
+    }
+    reverse('Hello World!');
+    ```
+
 
 2. Write a function `keep` that "keeps" certain elements in an array. The
    function will need to take *two* arguments, an array, and something else --
