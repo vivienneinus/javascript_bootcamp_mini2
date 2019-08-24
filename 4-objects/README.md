@@ -102,6 +102,7 @@ Fix the syntax & style issues with the three objects below:
    obj["number"] = 25;
    obj.number; // 25
    obj[number]; // error
+   obj.'number'; // error
    ```
 
 3. Now, check the value of `obj` in the console and ensure that it has the two
