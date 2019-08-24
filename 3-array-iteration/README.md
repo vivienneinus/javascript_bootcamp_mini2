@@ -69,18 +69,18 @@ loop.
    returns that string *reversed*.
    ```js
    function reverse(str) {
-    if (str.length === 0) {
-      return '';
-    }
-    var s = []
-    for (i = 0; i < str.length; i++) {
-      s.unshift(str.charAt(i))
-    }
-    return s.join();
-    }
-    reverse('Hello World!');
+      if (str.length === 0) {
+        return '';
+      }
+      var s = []
+      for (i = 0; i < str.length; i++) {
+        s.unshift(str.charAt(i))
+      }
+      return s.join('');
+   }
+   reverse('Hello World!');
 
-    function reverse(str) {
+   function reverse(str) {
       if (str.length === 0) {
         return '';
       }
@@ -88,7 +88,7 @@ loop.
       for (i = str.length - 1; i >= 0; i--) {
         s.push(str.charAt(i))
       }
-      return s.join();
+      return s.join('');
     }
     reverse('Hello World!');
     ```
